@@ -3,7 +3,7 @@ import logging
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from pages.login_form import LoginPage
+
 from pages.login_form_2 import LoginPage2
 
 logger = logging.getLogger("qa")
