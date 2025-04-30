@@ -46,4 +46,4 @@ class BasePage:
         :return: текст ошибки (для нашего приложения - текст в поле вывода)
         '''
         element = self._find_element(locator, wait_time)
-        return element.text()
+        return element.text

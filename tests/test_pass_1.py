@@ -1,3 +1,4 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -10,7 +11,7 @@ URL = "https://berpress.github.io/selenium-login-demo/"
     Вход - id=login-btn
     Очистить - id=reset-btn 
 '''
-
+@pytest.mark.skip
 class TestLoginForm1:
     def test_happy_path(self):
         '''

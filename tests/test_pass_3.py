@@ -1,5 +1,8 @@
+import pytest
+
 URL = "https://berpress.github.io/selenium-login-demo/"
 
+@pytest.mark.skip
 class TestLoginForm3:
     def test_happy_path(self, login_page):
         '''

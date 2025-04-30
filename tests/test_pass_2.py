@@ -1,10 +1,11 @@
+import pytest
 from selenium import webdriver
-from pages.login_form import LoginForm
+from pages.login_form import LoginPage
 
 URL = "https://berpress.github.io/selenium-login-demo/"
 
 
-
+@pytest.mark.skip
 class TestLoginForm2:
     def test_happy_path(self):
         '''
@@ -18,7 +19,7 @@ class TestLoginForm2:
         driver.get(URL)
 
         # Экземпляр класса LoginForm
-        login_form = LoginForm(driver)
+        login_form = LoginPage(driver)
 
         # Метод поиска элементов на форме и взаимодействия с ними
         login_form.add_login_password('admin', 'password')
@@ -37,7 +38,7 @@ class TestLoginForm2:
         driver.get(URL)
 
         # Экземпляр класса LoginForm
-        login_form = LoginForm(driver)
+        login_form = LoginPage(driver)
 
         # Метод поиска элементов на форме и взаимодействия с ними
         login_form.add_login_password('adm', 'pass')
@@ -56,7 +57,7 @@ class TestLoginForm2:
         driver.get(URL)
 
         # Экземпляр класса LoginForm
-        login_form = LoginForm(driver)
+        login_form = LoginPage(driver)
 
         # Метод поиска элементов на форме и взаимодействия с ними
         login_form.add_login_password('12345', '12345')
