@@ -10,6 +10,7 @@ logger = logging.getLogger("qa")
 
 def pytest_addoption(parser):
     parser.addoption("--url", action="store", default="https://berpress.github.io/selenium-login-demo/", help="url")
+    parser.addoption("--headless", action="store_true", help="url")
 
 '''
 @pytest.fixture(scope="session")
@@ -38,9 +39,13 @@ def login_page_2(request):
 
     # Настройка и открытие страницы
     url = request.config.getoption('--url')
-    logger.info(f'Start app on url {url}')
+    is_headless = request.config.getoption('--headless')
+
     chrome_options = Options()
     chrome_options.add_argument("--window-size=1920,1080")
+    if is_headless:
+        chrome_options.add_argument("--headless=new")
+    logger.info(f'Start app on url {url}? headless is {is_headless}')
     driver = webdriver.Chrome()
     driver.get(url)
 
