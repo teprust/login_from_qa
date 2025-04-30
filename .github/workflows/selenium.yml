@@ -33,7 +33,7 @@ jobs:
 
     - name: Run Selenium tests
       run: |
-        pytest tests --junit-xml=reports/results.xml 
+        pytest tests --headless --junit-xml=reports/results.xml 
 
     - name: Send Test Results to TestIT
       run: |
